@@ -1,0 +1,19 @@
+-- zad 1
+SELECT zespol1, zespol2, wynik, data_rozgrywki
+FROM rozgrywka
+WHERE zespol1 = "EVG";
+
+-- zad 2
+SELECT imie, nazwisko
+FROM zawodnik
+WHERE pozycja_id = 3;
+
+-- zad 3
+SELECT zawodnik.id, nazwisko, pozycja.nazwa
+FROM zawodnik
+JOIN pozycja
+ON zawodnik.id = pozycja.id
+WHERE zawodnik.id BETWEEN 1 AND 3;
+
+-- zad 4
+DROP TABLE liga;

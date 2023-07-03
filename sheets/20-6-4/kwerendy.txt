@@ -1,0 +1,23 @@
+-- zad 1
+SELECT nazwa, cena
+FROM uslugi
+WHERE cena < 30;
+
+-- zad 2
+SELECT SUM(cena)
+FROM uslugi
+WHERE nazwa LIKE "%kosmetyczna%";
+
+SELECT SUM(cena)
+FROM uslugi
+WHERE rodzaj = 1;
+/* usługa kosmetyczna*/
+
+-- zad 3
+CREATE USER "kosmetyczka"@"localhost"
+IDENTIFIED BY "Kosmet34";
+
+-- zad 4
+GRANT SELECT, INSERT
+ON egzamin1.uslugi
+TO "kosmetyczka"@"localhost";

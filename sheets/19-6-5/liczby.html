@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ciągi liczbowe</title>
+        <link rel="stylesheet" href="styl2.css">
+    </head>
+    <body>
+        <div id="banner-first">
+            <h2>Poznaj Ciągi Liczbowe</h2>
+        </div>
+        <div id="banner-second">
+            <a href="liczby.html">
+                <h5>Ciągi arytmetyczne</h5>
+            </a>
+        </div>
+        <div id="banner-third">
+            <a href="fib.html">
+                <h5>Ciąg Fibonacciego</h5>
+            </a>
+        </div>
+        <div id="banner-fourth">
+            <img src="obraz1.png" alt="Fibonacci">
+        </div>
+        <div id="block-left">
+            <ol>
+                <li>ciąg arytmetyczny</li>
+                <li>ciąg geometryczny</li>
+                <li>ciąg Fibonacciego</li>
+            </ol>
+        </div>
+        <div id="block-rigth">
+            <h2>Generowanie ciągu arytmetycznego</h2>
+            <label for="first-element">Pierwszy wyraz A1:</label>
+            <input type="number" name="first-element" id="first-element" step=1><br>
+            <label for="difference">Różnica ciągu R:</label>
+            <input type="number" name="difference" id="difference" step=1><br>
+            <label for="count">Liczba wyrazów w ciągu N:</label>
+            <input type="number" name="count" id="count" step=1 min=1><br>
+            <button id="button" onclick="calculateSequence()">Generuj Ciąg</button><br><br>
+            <span id="result"><br></span>
+        </div>
+        <footer id="footer">
+            <p>Autor: 213742069</p>
+        </footer>
+        <script>
+            function calculateSequence() {
+                let a1 = Number(document.getElementById("first-element").value),
+                r = Number(document.getElementById("difference").value),
+                n = Number(document.getElementById("count").value);
+                let result = document.getElementById("result"), resultText = a1;
+                for (let i = 2; i <= n; i++) {
+                    let aN = a1 + (i - 1) * r;
+                    resultText += ", " + aN;
+                    }
+                result.innerHTML = resultText;
+                }
+        </script>
+    </body>
+</html>

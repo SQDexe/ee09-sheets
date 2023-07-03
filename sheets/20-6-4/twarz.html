@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Usługi kosmetyczne</title>
+        <link rel="stylesheet" href="styl.css">
+    </head>
+    <body>
+        <div id="left-top">
+            <h2>W ofercie</h2>
+            <ul>
+                <li>
+                    <a href="twarz.html">Zabiegi na twarzy</a>
+                    <ol>
+                        <li>Piling</li>
+                        <li>Maska</li>
+                        <li>Regulacja brwi</li>
+                    </ol>
+                </li>
+                <li>Masaż</li>
+                <li>Diety oczyszczające</li>
+            </ul>
+            <a href="index.html">Do strony głównej</a>
+        </div>
+        <div id="right-top">
+            <h1>Salon kosmetyczny</h1>
+        </div>
+        <div id="right-bot">
+            <h2>Sprawdź cenę swojej wizyty</h2>
+            <input type="checkbox" name="piling" value="45">
+            <label for="piling">Piling</label><br>
+            <input type="checkbox" name="maksa" value="30">
+            <label for="maska">Maska</label><br>
+            <input type="checkbox" name="masaz" value="20">
+            <label for="masaz">Masaż twarzy</label><br>
+            <input type="checkbox" name="regulacja" value="5">
+            <label for="regulacja">Regulacja brwi</label><br>
+            <button onclick="count();">Sprawdź cenę</button><br><br>
+            <span id="result"><br></span>
+        </div>
+        <div id="left-bot">
+            <img src="obraz1.jpg" alt="Kosmetyczka">
+        </div>
+        <footer>
+            <p>Autor: 213742069</p>
+        </footer>
+        <script>
+            function count() {
+                let inputs = document.getElementsByTagName("input"), resultValue = 0;
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i].checked) resultValue += Number(inputs[i].value);
+                    }
+                document.getElementById("result").innerText = "Cena zabiegów: " + resultValue;
+                }
+        </script>
+    </body>
+</html>

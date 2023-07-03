@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stacja paliw</title>
+        <link rel="stylesheet" href="styl3.css">
+    </head>
+    <body>
+        <div id="banner-left">
+            <h1>Stacja Paliw</h1>
+        </div>
+        <div id="banner-right">
+            <a href="stacja.html"><img src="home.png" alt="home"></a>
+            <a href="obliczenia.html"><img src="znak.png" alt="znak"></a>
+        </div>
+        <div id="center">
+            <h3>Oblicz koszt paliwa</h3>
+            <form>
+                <label for="fuel-type">Rodzaj paliwa (1-benzyna, 2-olej napędowy):</label><br>
+                <input type="number" name="fuel-type" id="fuel-type" value=0 step=1><br>
+                <label for="fuel-amount">Ile litrów</label><br>
+                <input type="number" name="fuel-amount" id="fuel-amount" value=0 step=1 min=0>
+            </form>
+            <button id="calculate" onclick="calculateFuelPrice()" >OBLICZ</button><br>
+            <span id="result"><br></span>
+        </div>
+        <div id="bottom-left">
+            <a href="kwerendy.txt" download="">Pobierz kweredny</a>
+        </div>
+        <div id="bottom-right">
+            <img src="samochod.png" alt="samochód">
+        </div>
+        <footer id="footer">
+            <p>Stronę opracował: 213742069</p>
+        </footer>
+        <script>
+            function calculateFuelPrice() {
+                let fuelType = document.getElementById("fuel-type").value,
+                fuelAmount = document.getElementById("fuel-amount").value,
+                result = document.getElementById("result");
+                let fuelPrice;
+                switch (Number(fuelType)) {
+                    case 1 : fuelPrice = 4 * fuelAmount; break;
+                    case 2 : fuelPrice = 3.5 * fuelAmount; break;
+                    default : fuelPrice = 0 * fuelAmount; break;
+                    }
+                result.innerHTML = "koszt paliwa: " + fuelPrice + " zł";
+                }
+        </script>
+    </body>
+</html>

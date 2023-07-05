@@ -37,7 +37,7 @@ const load = () => {
                         })
                     .fail((jqXHR) => innerContent = $("<div></div>")
                         .addClass("error")
-                        .text("Błąd - " + jqXHR.status))
+                        .text("< Błąd - " + jqXHR.status + " >"))
                     .always(() => list.append($("<li></li>")
                             .append(details
                                 .append(innerContent))));
@@ -46,7 +46,7 @@ const load = () => {
             })
         .fail((jqXHR)=> content = $("<div></div>")
             .addClass("error")
-            .text("Błąd - " + jqXHR.status))
+            .text("< Błąd - " + jqXHR.status + " >"))
         .always(() => $("#list")
             .empty()
             .append(content));

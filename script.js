@@ -28,7 +28,7 @@ const load = () => {
                                 .append($("<a></a>")
                                     .attr({
                                         "href": file.download_url,
-                                        "download": "",
+                                        "download": file.name,
                                         "target": "_blank"
                                         })
                                     .text(file.name)));

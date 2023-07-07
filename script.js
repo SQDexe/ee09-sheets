@@ -27,7 +27,7 @@ const load = () => {
                             innerList.append($("<li></li>")
                                 .append($("<a></a>")
                                     .attr({
-                                        "href": "sheets/" + file.name,
+                                        "href": [data.html_url, "sheets", folder, file.name].join('/'),
                                         "download": file.name,
                                         "target": "_blank"
                                         })

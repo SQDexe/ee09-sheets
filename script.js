@@ -27,7 +27,7 @@ const load = () => {
                             innerList.append($("<li></li>")
                                 .append($("<a></a>")
                                     .attr({
-                                        "href": "sqdexe.github.io/ee09-sheets/" + file.path,
+                                        "href": "https://sqdexe.github.io/ee09-sheets/" + file.path,
                                         "download": file.name,
                                         "target": "_blank"
                                         })

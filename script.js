@@ -1,6 +1,6 @@
 'use strict';
 function exit() { window.location = 'https://sqdexe.github.io'; }
-function load() {
+function loadPage() {
     const URL = 'https://api.github.com/repos/SQDexe/ee09-sheets/contents/sheets';
 
     let content = null;
@@ -54,7 +54,8 @@ function load() {
             .empty()
             .append(content));
     }
-$(document).ready(() => {
+function load() {
     $('#exit button').click(exit);
     load();
-    });
+    }
+$(document).ready(load);

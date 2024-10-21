@@ -1,11 +1,10 @@
 'use strict';
-const exit = () =>
-    window.location = 'https://sqdexe.github.io';
-const load = () => {
-    const url = 'https://api.github.com/repos/SQDexe/ee09-sheets/contents/sheets';
+function exit() { window.location = 'https://sqdexe.github.io'; }
+function load() {
+    const URL = 'https://api.github.com/repos/SQDexe/ee09-sheets/contents/sheets';
 
     let content = null;
-    $.getJSON(url)
+    $.getJSON(URL)
         .done(data => {
             let list = $('<ul></ul>');
 
@@ -23,7 +22,7 @@ const load = () => {
                         .text(`${ idNumber[1].padStart(2, '0') }.20${ idNumber[0] } - ${ idNumber[2] }`));
 
                 let innerContent = null;
-                $.getJSON(`${url}/${folder.name}`)
+                $.getJSON(`${URL}/${folder.name}`)
                     .done(innerData => {
                         let innerList = $('<ul></ul>');
 
